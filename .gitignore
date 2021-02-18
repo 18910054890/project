@@ -1,0 +1,6 @@
+.DS_Store
+application.yml
+*.xlsx
+/.idea
+/om-app-parent/*.iml
+/om-base-parent/*.iml

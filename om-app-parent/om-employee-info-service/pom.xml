@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.lyzd.om.app</groupId>
+		<artifactId>om-app-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>om-employee-info-service</artifactId>
+	<name>om-employee-info-service</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<version>2.3.0.RELEASE</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+
+	<!-- 	<dependency>
+   <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+</dependency> -->
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit-bom</artifactId>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.lyzd.om</groupId>
+			<artifactId>om-shared-model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.lyzd.om</groupId>
+			<artifactId>om-spring-common</artifactId>
+		</dependency>
+		<!--hutool工具 -->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.1.4</version>
+		</dependency>
+		<dependency>  
+            <groupId>com.lyzd.om.app</groupId>  
+            <artifactId>om-employee-sdk</artifactId> 
+            <version>0.0.1-SNAPSHOT</version>  
+        </dependency>
+
+	</dependencies>
+	
+	<build>
+     <plugins>
+         <plugin>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-maven-plugin</artifactId>
+             <configuration>
+                    <!-- 没有该配置，devtools 不生效 -->
+                    <fork>true</fork>
+             </configuration>
+         </plugin>
+     </plugins>
+  </build>
+</project>

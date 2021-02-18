@@ -1,0 +1,1 @@
+alter table my_user add column first_login varchar(6)

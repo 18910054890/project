@@ -1,0 +1,28 @@
+
+--员工信息更新申请表
+CREATE TABLE My_EmployeeTask
+(
+  ID           VARCHAR(64) NOT NULL,
+  userId       VARCHAR(32) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.userId') VIRTUAL,
+  name         VARCHAR(64) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.name') VIRTUAL,
+  deptName     VARCHAR(64)         GENERATED ALWAYS AS (JSON_CONTENT ->> '$.deptName') VIRTUAL,
+  isPass       VARCHAR(5) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.isPass') VIRTUAL,
+  createdAt    VARCHAR(32) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.createdAt') VIRTUAL,
+  JSON_CONTENT JSON        NOT NULL,
+  PRIMARY KEY (ID)
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  
+--HR消息表  
+ CREATE TABLE My_Message
+(
+  ID           VARCHAR(64) NOT NULL,
+  initUserId   VARCHAR(32) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.initUserId') VIRTUAL,
+  reader       VARCHAR(32) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.reader') VIRTUAL,
+  isRead       VARCHAR(2) GENERATED ALWAYS AS (JSON_CONTENT ->> '$.isRead') VIRTUAL,
+  JSON_CONTENT JSON        NOT NULL,
+  PRIMARY KEY (ID)
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+
+--HR角色
+INSERT INTO `my_role` VALUES (4, 'HR', 'HR用户', '2020-11-01 14:00:13', '2020-11-01 14:00:13', '2');
